@@ -89,14 +89,14 @@ spec:
       storageClassName: slow
       resources:
         requests:
-          storage: 1Gi
----
-kind: StorageClass
-apiVersion: storage.k8s.io/v1
-metadata:
-  name: slow
-provisioner: kubernetes.io/gce-pd
-parameters:
-  type: pd-standard
-  zone: us-central1-c
-  fsType: ext4
+          storage: 10Gi
+#---
+#kind: StorageClass
+#apiVersion: storage.k8s.io/v1
+#metadata:
+#  name: slow
+#provisioner: kubernetes.io/gce-pd
+#parameters:
+#  type: pd-standard
+#  zone: us-central1-c
+#  fsType: ext4

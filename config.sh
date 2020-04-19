@@ -1,1 +1,1 @@
-export CASSANDRA_CONTROLLER_IMAGE=gcr.io/gdax-dnn/cassandra@sha256:33cc1bed8e6e6cadd3b67005c7a97e7d0f5018138fef7a99c66f600becaeadff
+export CASSANDRA_CONTROLLER_IMAGE=gcr.io/gdax-dnn/cassandra@sha256:d3a42cb55abc76818559e7d6a89a3e18a5b6060789dc41f143d3b5f9ca6499df

@@ -1,0 +1,60 @@
+#apiVersion: storage.k8s.io/v1
+#kind: StorageClass
+#metadata:
+#  name: slow
+#provisioner: kubernetes.io/gce-pd
+#parameters:
+#  type: pd-standard
+#  fstype: ext4
+#  replication-type: none
+#---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-1
+spec:
+  storageClassName: slow
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  #claimRef:
+    #namespace: default
+    #name: cassandra-data
+  gcePersistentDisk:
+    pdName: pd-1
+    fsType: ext4
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-2
+spec:
+  storageClassName: slow
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  #claimRef:
+  #  namespace: default
+  #  name: cassandra-data
+  gcePersistentDisk:
+    pdName: pd-2
+    fsType: ext4
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-3
+spec:
+  storageClassName: slow
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  #claimRef:
+  #  namespace: default
+  #  name: cassandra-data
+  gcePersistentDisk:
+    pdName: pd-3
+    fsType: ext4

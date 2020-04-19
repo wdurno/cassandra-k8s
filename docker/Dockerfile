@@ -1,8 +1,13 @@
 FROM ubuntu:18.04 
 
-ADD entrypoint.sh /entrypoint.sh 
+ADD app /app 
 
-RUN chmod +x entrypoint.sh 
+RUN chmod +x /app/entrypoint.sh && \
+apt-get update && \
+apt install python3-pip -y && \
+pip3 install cassandra-driver 
 
-ENTRYPOINT /bin/bash /entrypoint.sh 
+WORKDIR /app
+
+ENTRYPOINT /bin/bash /app/entrypoint.sh 
 
