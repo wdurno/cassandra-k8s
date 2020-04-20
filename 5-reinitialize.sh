@@ -1,5 +1,4 @@
-source config.sh 
-scripts/spin-up-cluster.sh
+source config.sh
 kubectl apply -f kubernetes/persistent-volumes.yaml
 kubectl apply -f kubernetes/cassandra-service.yaml
 kubectl apply -f kubernetes/cassandra-statefulset.yaml
